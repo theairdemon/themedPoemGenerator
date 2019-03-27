@@ -23,7 +23,7 @@ class PoemClass:
         self.verb_dict["love"] = ["love", "admire", "cherish", "treasure", "deify", "venerate", "embrace", "adore", "promise"]
         self.verb_dict["flower"] = ["flower", "blossom", "prosper", "thrive", "bloom"]
         self.verb_dict["light"] = ["light", "brighten", "ignite", "kindle", "shine", "sparkle", "fire", "illuminate", "inflame", "ignite"]
-        self.verb_dict["generic"] = ["run", "escape", "venture", "explore", "discover", "reveal", "walk"]
+        self.verb_dict["generic"] = ["run", "escape", "venture", "explore", "discover", "reveal", "walk", "behold", "dwell"]
 
 
     """
@@ -32,22 +32,36 @@ class PoemClass:
     """
     def get_poem(self):
         num_lines = random.randint(4, 20)
-        stanza_length = random.randint(4, 8)
+        stanza_length = int(random.randint(4, 8) / 2) * 2
         poem = ""
 
         for line in range(1, num_lines+1):
-            # pick a NOUN
+            # pick a NOUN if the noun is in the dictionary
             if self.theme in self.noun_list:
-                noun = random.choice(self.noun_dict[self.theme])
+                # random chance number
+                rand_num_noun = random.randint(1, 4)
+                # 1 in 4 chance of using an unrelated noun
+                if rand_num_noun == 4:
+                    noun_name = random.choice(self.noun_list)
+                    noun = random.choice(self.noun_dict[noun_name])
+                # most of the time, pick a related noun
+                else: noun = random.choice(self.noun_dict[self.theme])
+            # if noun not in dictionary, pick random noun
             else:
                 noun_name = random.choice(self.noun_list)
                 noun = random.choice(self.noun_dict[noun_name])
 
             # pick a VERB
             if self.theme in self.verb_list:
-                temp_verb_list = [self.theme, "generic"]
-                verb_name = random.choice(temp_verb_list)
-                verb = random.choice(self.verb_dict[verb_name])
+                # random chance number
+                rand_verb_num = random.randint(1, 4)
+                # 1 in 4 chance of using an unrelated verb
+                if rand_verb_num == 4:
+                    verb_name = random.choice(self.verb_list)
+                    verb = random.choice(self.verb_dict[verb_name])
+                # most of the time, pick a related verb
+                else: verb = random.choice(self.verb_dict[self.theme])
+            # if verb not in dictionary, pick random verb
             else:
                 verb_name = random.choice(self.verb_list)
                 verb = random.choice(self.verb_dict[verb_name])
