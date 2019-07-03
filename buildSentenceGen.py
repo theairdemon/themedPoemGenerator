@@ -4,7 +4,7 @@ import re
 from collections import defaultdict
 import string
 
-filename = "walt-whitman-poems.txt"
+filename = "edgar-allan-poe-poems.txt"
 
 # Read text from file and tokenize.
 with open(filename) as f:
@@ -62,7 +62,7 @@ def walk_graph(graph, distance=5, start_node=None):
 alphabet = list(string.ascii_lowercase)
 
 len_stanza = random.randint(4,10)
-num_stanza = random.randint(1,5)
+num_stanza = random.randint(2,8)
 for i in range(num_stanza):
   for j in range(len_stanza):
     len_line = random.randint(6,12)
