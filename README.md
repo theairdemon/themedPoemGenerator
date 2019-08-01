@@ -6,7 +6,7 @@ Hello! Welcome to my themed poem generator. I have a previous version of this ap
 
 This is a passion project of mine, so the commits are informal and pushed with large amounts of time between them. Feel free to download and use this code in any sort of open source project.
 
-##The Story So Far
+## The Story So Far
 
 One day, in high school english, we had a homework assignment: write four poems for the next class. I went home and sat at my desk, absolutely stumped. What should I write about? I started throwing together some nouns and verbs, trying to make something sound deep and poetic. After a few minutes, I realized that this could be fairly simply translated into a formula. 
 
