@@ -4,7 +4,7 @@ import re
 from collections import defaultdict
 import string
 
-filename = "walt-whitman-poems.txt"
+filename = "trainingPoems/walt-whitman-poems.txt"
 
 # Read text from file and tokenize.
 with open(filename) as f:

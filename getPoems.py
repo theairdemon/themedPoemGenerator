@@ -76,7 +76,7 @@ def get_poems(author_name):
             poem_list.append(poem)
     
     # create file and write poems into it
-    text_file = open(poet_name + "-poems.txt", "w+")
+    text_file = open("trainingPoems/" + poet_name + "-poems.txt", "w+")
     for poem in poem_list:
         text_file.write(poem.encode('utf-8'))
     text_file.close()
